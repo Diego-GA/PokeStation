@@ -1,3 +1,8 @@
+<!-- Galvan Alvarez Diego
+Meza Carrillo Guadalupe
+Robles Gomez Mariano -->
+
+
 <!DOCTYPE html>
 
 <html lang="es">
@@ -9,10 +14,13 @@
 
     <link rel="stylesheet" href="build/css/normalize.css">
     <link rel="stylesheet" href="build/css/estilos.css">
-    <link rel="icon" href="build/img/Mascaralogo.png">
-    <link href="https://fonts.googleapis.com/css2?family=Lobster+Two&family=Poiret+One&display=swap" rel="stylesheet">
+    <link rel="icon" href="build/img/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital@1&family=Sofia&display=swap" rel="stylesheet">
+    <script defer src="build/js/menu.js" ></script>
 
-    <title>Sabores México</title>
+    <title>Poké Station</title>
     </head>
 
   <body>
@@ -28,7 +36,7 @@
           </div>
 
           <div class="header__contenedor-titulo">
-            <h1 class="header__titulo">Poke<span>Station</span></h1>
+            <h1 class="header__titulo">Poké Station</h1>
           </div>
         </div>
 
@@ -37,59 +45,68 @@
             <a href="index.html" class="navegacion__enlaces">Inicio</a>
             <a href="conocenos.html" class="navegacion__enlaces">Conocenos</a>
             <a href="galeria.html" class="navegacion__enlaces">Galeria</a>
-            <a href="reserva.html" class="navegacion__enlaces">Reserva</a>
+            <a href="reserva.php" class="navegacion__enlaces">Reserva</a>
           </div>
         </div>
       </div>
 
-      <!-- <div class="eslogan contenedor">
-        <h2 class="eslogan__titulo">¡La mejor experencia!</h2>
-      </div> -->
     </div>
 
     <main class="index contenedor">
-      <div class="index__ven">
+        
+      <h2 class="index__menu-titulo">Nuestro Menú</h2>
 
-        <div class="index__meta">
-          <div class="restaurante_gridcontainer">
-            <div class="restaurante_img restaurante__color ">
-              <!-- <img src="https://images.squarespace-cdn.com/content/v1/5637e7e2e4b0a5cbcf21d677/1554268039443-I0IR46993GZ3K7BJHYJV/image-asset.jpeg?format=750w" alt="Imagen del restaurant"> -->
-              <h2 class="index__ven-titulo">Ven a visitarnos</h2>
-              <p>
-                Nos encontramos en: Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam consequatur labore ex quibusdam facere laboriosam illum, repudiandae veritatis earum, amet, excepturi delectus molestias cupiditate ipsa!
-              </p>
-            </div>
-            <div class="restaurante_img">
-              <img src="build/img/pokecafe.jpg" alt="">
-            </div>
-            <div class="restaurante_img">
-              <img src="build/img/pokecafe2.jpg" alt="">
-            </div>
+      <img src="build/img/menu.png" alt="menu">
 
-            <div class="restaurante_img restaurante__color">
-              <!-- <img src="https://images.squarespace-cdn.com/content/v1/5637e7e2e4b0a5cbcf21d677/1554268037409-V9XP5TQLNHZGRS0NN60C/image-asset.jpeg?format=1500w" alt=""> -->
-            
-              <h2 class="index__ven-titulo">Concepto</h2>
-              <p>
-                Nos definimos como: Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam consequatur labore ex quibusdam facere laboriosam illum, repudiandae veritatis earum, amet, excepturi delectus molestias cupiditate ipsa!
-              </p>
-            </div>
-          </div>
+      <div class="carrusel">
+
+        <div class="carrusel__contenedor">
+          <img src="build/img/menu1.jpg" alt="Imagen 1" class="img">
+          <img src="build/img/menu2.jpg" alt="Imagen 2" class="img">
+          <img src="build/img/menu3.jpg" alt="Imagen 3" class="img">
+          <img src="build/img/menu4.jpg" alt="Imagen 4" class="img">
+          <img src="build/img/menu5.jpg" alt="Imagen 5" class="img">
+          <img src="build/img/menu6.jpg" alt="Imagen 6" class="img">
+          <img src="build/img/menu7.jpg" alt="Imagen 7" class="img">
+          <img src="build/img/menu8.jpg" alt="Imagen 9" class="img">
+          <img src="build/img/menu9.jpg" alt="Imagen 8" class="img">
+          <img src="build/img/menu10.jpg" alt="Imagen 10" class="img">
+          <img src="build/img/menu11.jpg" alt="Imagen 11" class="img">
+          <img src="build/img/menu12.jpg" alt="Imagen 12" class="img">
+          <img src="build/img/menu13.jpg" alt="Imagen 13" class="img">
+          <img src="build/img/menu14.jpg" alt="Imagen 14" class="img">
           
-          <div class="index__menu">
-            <h2 class="index__menu-titulo">Nuestro Menú</h2>
-            
-            <div class="menu">
-              <img src="build/img/menu.png" alt="menu">
-            </div>
-
-            </div>
-          </div>
         </div>
+
+        <ul clas="puntos">
+          <li class="punto activo"></li>
+          <li class="punto"></li>
+          <li class="punto"></li>
+          <li class="punto"></li>
+          <li class="punto"></li>
+          <li class="punto"></li>
+          <li class="punto"></li>
+          <li class="punto"></li>
+          <li class="punto"></li>
+          <li class="punto"></li>
+          <li class="punto"></li>
+          <li class="punto"></li>
+          <li class="punto"></li>
+          <li class="punto"></li>
+        </ul>
       </div>
-    
+      
     </main>
-     
+
+      <!-- SECCION DE LAS MEJORES PROMOCIONES -->
+    <section class="anfitrion contenedor seccion">
+      <div class="anfitrion__contenido">
+        <h2 class="anfitrion__heading">Las mejores promociones</h2>
+        <p class="anfitrion__texto">Encuentra platillos desde $129</p>
+        <a href="#" class="anfitrion__enlace">Más Información</a>
+      </div>
+    </section>
+    
     <!-- SECCION DE LA TIENDA -->
     <section class="lugares contenedor seccion">
       <h2 class="lugares__heading">Nuestra Tienda</h2>
@@ -112,21 +129,43 @@
 
           <div class="lugar">
               <img class="lugar__imagen" src="build/img/producto4.jpg" alt="imagen seccion vive">
-              <p class="lugar__nombre">Teteras</p>
+              <p class="lugar__nombre">Tazas</p>
           </div>
       </div>
 
   </section>
 
-  <!-- SECCION DE LAS MEJORES PROMOCIONES -->
-  <section class="anfitrion contenedor seccion">
-      <div class="anfitrion__contenido">
-          <h2 class="anfitrion__heading">Las mejores promociones</h2>
-          <p class="anfitrion__texto">Encuentra platillos desde $99</p>
-          <a href="#" class="anfitrion__enlace">Más Información</a>
-      </div>
-  </section>
+  <div class="index contenedor">
 
+    <div class="index__meta">
+      <div class="restaurante_gridcontainer">
+        <div class="restaurante_img restaurante__color ">
+          <!-- <img src="https://images.squarespace-cdn.com/content/v1/5637e7e2e4b0a5cbcf21d677/1554268039443-I0IR46993GZ3K7BJHYJV/image-asset.jpeg?format=750w" alt="Imagen del restaurant"> -->
+          <h2 class="index__ven-titulo">Ven a visitarnos</h2>
+          <p>
+            Nos encontramos en: Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam consequatur labore ex quibusdam facere laboriosam illum, repudiandae veritatis earum, amet, excepturi delectus molestias cupiditate ipsa!
+          </p>
+        </div>
+        <div class="restaurante_img">
+          <img src="build/img/pokecafe.jpg" alt="">
+        </div>
+        <div class="restaurante_img">
+          <img src="build/img/pokecafe2.jpg" alt="">
+        </div>
+
+        <div class="restaurante_img restaurante__color">
+          <!-- <img src="https://images.squarespace-cdn.com/content/v1/5637e7e2e4b0a5cbcf21d677/1554268037409-V9XP5TQLNHZGRS0NN60C/image-asset.jpeg?format=1500w" alt=""> -->
+        
+          <h2 class="index__ven-titulo">Concepto</h2>
+          <p>
+            Nos definimos como: Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam consequatur labore ex quibusdam facere laboriosam illum, repudiandae veritatis earum, amet, excepturi delectus molestias cupiditate ipsa!
+          </p>
+        </div>
+      </div>
+      
+      </div>
+    </div>
+  </div>
 
 
 
@@ -239,14 +278,14 @@
 
     <footer class="footer ">
       <div class="footer__contacto">
-             
+        
       <!-- <img src="https://svgsilh.com/svg/2027398.svg" alt="logo"> -->
                     
         <div class="navegacion">
           <a href="index.html" class="navegacion__enlaces">Inicio</a>
           <a href="conocenos.html" class="navegacion__enlaces">Conocenos</a>
-           <!-- <a href="#" class="navegacion__enlaces">Galeria</a> -->
-          <a href="reserva.html" class="navegacion__enlaces">Reserva</a>
+          <!-- <a href="#" class="navegacion__enlaces">Galeria</a> -->
+          <a href="reserva.php" class="navegacion__enlaces">Reserva</a>
         </div>
       </div>
     
@@ -268,13 +307,13 @@
         </div>
     
         <div class="footer__frase">
-          <p> &#169 2022 Sabores Mexico</p>
+          <p> &#169 2022 Poké Station</p>
         </div>
       </div>
   
       <div class="footer__redes-sociales">
         <div class="footer__red-social">
-          <a href="https://www.facebook.com/Saborriquitimo" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Facebook_icon_2013.svg/1200px-Facebook_icon_2013.svg.png" alt="Logo de Facebook"></a>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Facebook_icon_2013.svg/1200px-Facebook_icon_2013.svg.png" alt="Logo de Facebook">
           <p>Siguenos en Facebook</p>
         </div>
     

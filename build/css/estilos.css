@@ -1,10 +1,13 @@
 :root {
     --primario: #ffdb26;
     --amarilloSecundario: #bb9b1c;
-    --blanco: #FFF;
-    --negro: #000000;
+    --negro: #393939;
+    --blanco: #ececec;
+    --sombra-ppal: #c9c9c9;
+    --sombra-sec: #ffffff;
+    --borde-negro: #00000050;
+    --marcado: rgb(127, 195, 255);
     --gris: #fffaf3;
-    /* --fuentePrincipal: 'Poppins', sans-serif; */
 }
 
 *{
@@ -14,19 +17,22 @@
 }
 html {
     font-size: 62.5%;
+    scroll-behavior: smooth;
 }
 *:before, *:after {
     box-sizing: inherit;
 }
 
 body {
-    font-family: var(--fuentePrincipal);
+    font-family: 'Lora', serif;;
     font-size: 1.6rem;
     line-height: 1.8;
 }
 h1, h2, h3 {
+    color: #53463b;
+    text-shadow: 0 0 50px ;
     font-weight: 900;
-    font-family: 'Lobster Two', cursive;
+    font-family: 'Sofia', cursive;
     margin: 2rem 0;
     
 }
@@ -94,9 +100,6 @@ img {
     }
 }
 
-/* .header__logo img{
-    /* filter: grayscale(100%) contrast(1000%) brightness(100%) */
-/* }  */
 
 .header__contenedor{
     display: flex;
@@ -133,11 +136,6 @@ img {
     height: 100%;
     display: flex;
     align-items: center;
-    /* background-color: #222;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    padding-left: .5rem; */
 }
 
 
@@ -252,29 +250,6 @@ img {
     }
 }
 
-/* Eslogan */
-
-.eslogan{
-    visibility: hidden;
-}
-
-@media (min-width: 768px){
-    .eslogan{
-        /* display: flex; */
-        visibility: visible;
-        display: flex;
-        justify-content: left;
-        position: relative;
-        /* background-color: var(--gris); */
-        /* border-radius: 1rem; */
-    }
-
-    .eslogan__titulo{
-        font-size: 2.2rem;
-        color: var(--primario);
-        text-shadow: 1px 1px 2px var(--negro);
-    }
-}
 
 /* Index */
 .index{
@@ -300,6 +275,7 @@ img {
 }
 @media (min-width: 768px){
     .index__ven-titulo{
+        color: #fffaf3;
         text-align: left;
     }
     .index__ven-titulo span{
@@ -309,26 +285,6 @@ img {
 }
 
 
-
-/* .restaurante_gridcontainer{
-    display: grid;
-    grid-template-rows: repeat(4, 20rem);
-    /* gap: 1rem; 
-}
-.restaurante_gridcontainer:nth-child(4){
-    grid-row: 3/4;
-}
-@media (min-width: 600px){
-    .restaurante_gridcontainer:nth-child(1){
-        grid-row: 1/2;
-        grid-column: 1/2;
-    }
-
-    .restaurante_gridcontainer:nth-child(2){
-        grid-row: 1/2;
-        grid-column: 2/3;
-    }
-}*/
 .restaurante__color{
     background-color: var(--primario);
     padding: 3rem;
@@ -385,67 +341,71 @@ img {
     }
 }
 
-
 .index__menu-titulo{
     text-align: center;
 }
 
-.container_slider{
-    margin:auto;
-    background-color: white;
-    width: 800px;
-    height: fit-content;
-    padding: 10px;
-}
-
-.container_slider ul, li{
-    padding: 0;
-    margin: 0;
-    list-style: none;
-}
-
-.slider{
-    position: relative;
+.carrusel {
+    justify-content: center;
     width: 100%;
-    height: 50rem;
-  }
-  
-.slider li {
+    max-width: 120em;
+    padding: 2em;
+    color: var(--negro);
+    transition: all 0.4s ease;
+    border-radius: 1em;
+    background-color: var(--blanco);
+    box-shadow: 1em 1em 2em var(--sombra-ppal), -1em -1em 2em var(--sombra-sec), inset 0 0 0 transparent, inset 0 0 0 transparent;
+    overflow: hidden;
+}
+
+.carrusel__contenedor{
+    width: 1400%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
     align-items: center;
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    opacity: 0;
-    width: inherit;
-    height: inherit;
-    transition: opacity .5s;
-    background:#fff;
+    color: var(--amarilloSecundario);
+    transition: all 0.4s ease;
+    border-radius: 1em;
+    background-color: var(--blanco);
+    box-shadow: 1em 1em 2em var(--sombra-ppal), -1em -1em 2em var(--sombra-sec), inset 0 0 0 transparent, inset 0 0 0 transparent;
+    padding: 2em;
+    transition: all 0.5s ease;
+    
+    transform: translateX(0%);
 }
-  
-.slider li img{
-    align-items: center;
-    width: 100rem;
-    height: 36rem;
-    object-fit: cover;
+.carrusel__contenedor img{
+    width: calc( 100% / 14 - 2em);
+    min-height: 10vh;
+    color: var(--negro);
+    transition: all 0.4s ease;
+    border-radius: 1em;
+    background-color: var(--blanco);
+    box-shadow: 1em 1em 2em var(--sombra-ppal), -1em -1em 2em var(--sombra-sec), inset 0 0 0 transparent, inset 0 0 0 transparent;
 }
-
-.slider li h3{
-    text-align: center;
-    color: darkred;
+.puntos {
+    width: 100%;
+    margin: 1em 0 0;
+    padding: 0.4em;
+    display: flex;
+    flex-flow: row nowrap;
+    
 }
-
-.slider li p{
-    text-align: center;
+.punto {
+    display: inline-flex;
+    list-style: none;
+    width: 2em;
+    height: 2em;
+    margin: 1.25em 1.25em 0;
+    color: var(--negro);
+    transition: all 0.4s ease;
+    border-radius: 1em;
+    background-color: var(--blanco);
+    box-shadow: 0.6em 0.6em 1.2em var(--sombra-ppal), -0.6em -0.6em 1.2em var(--sombra-sec), inset 0 0 0 transparent, inset 0 0 0 transparent;
 }
-
-.slider li:first-child {
-      opacity: 1; 
+.punto.activo {
+    background-color: #ffdb26;
 }
-  
-.slider li:target {
-      opacity: 1; 
-}
-  
 .menu{
     text-align: center;
     margin: 20px;
@@ -709,7 +669,7 @@ img {
 .reserva__formulario-contenedor{
     display: grid;
     grid-template-rows: 45rem;
-    border: 6px double #222;
+    border: 6px double #bb9b1c;
     justify-content: center;
     padding: 5rem;
 }
@@ -739,12 +699,12 @@ img {
     font-weight: 700;
 } 
 .campo input[type="submit"]{
-    background-color: #222;
+    background-color: #BFBFBF;
     width: 100%;
     border: none;
     padding: 1rem;
     color: white;
-    font-size: 2.2rem;
+    font-size: 2rem;
     font-weight: 700;
     text-transform: uppercase;
 }
@@ -757,7 +717,7 @@ img {
 .campo input:not([type="submit"]), select{
     width: 100%;
     padding: 1rem;
-    border: .3rem solid #222;
+    border: .3rem solid #bb9b1c;
 
 }
 
@@ -774,7 +734,6 @@ img {
 }
 
 .reserva__imagen{
-    background-color: #222;
     display: flex;
     justify-content: center;
     align-items: center;

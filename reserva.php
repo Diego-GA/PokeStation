@@ -18,15 +18,37 @@
     </head>
 
   <body>
-
+      <?php
+        if(isset($_POST['Enviar'])){#name de submit
+            $_nombre=$_POST['nombre'];
+            $_email=$_POST['email'];
+            $_cantidad=$_POST['cantidad'];
+            $_hora=$_POST['hora'];
+            $_fecha=$_POST['fecha'];
+            include("conexion.php");
+            $sql="insert into reserva(nombre,email,cantidad,hora,fecha)
+            values('".$nombre."','".$email."','".$cantidad."','".$hora."','".$fecha."')";
+            $resultado=mysqli_query($conexion,$sql);
+            if($resultado){
+                echo "<script language=''JavaScript'>
+                alert('Los datos fueron ingresados correctamente');
+                location.assign('lista.php');</script>";
+            }
+            else{
+                echo "<script language=''JavaScript'>
+                alert('ERROR: Los datos NO fueron ingresados correctamente');
+                location.assign('lista.php');</script>";
+            }
+            mysqli_close($conexion);
+        }else{
+      ?>
+      <!--Empezar a trabajar-->
     <div class="header">
       <div class="header__contenedor contenedor">
 
         <div class="header__meta">
           <div class="header__logo">
-            <img class="header__imagen-mobile" src="build/img/logo_mobile.png" alt="Logo Poke Mobile">
-
-            <img class="header__imagen" src="build/img/logo.png" alt="Logo Poke">
+            <img src="build/img/logo.png" alt="Logo">
           </div>
 
           <div class="header__contenedor-titulo">
@@ -39,30 +61,31 @@
             <a href="index.html" class="navegacion__enlaces">Inicio</a>
             <a href="conocenos.html" class="navegacion__enlaces">Conocenos</a>
             <a href="galeria.html" class="navegacion__enlaces">Galeria</a>
-            <a href="reserva.php" class="navegacion__enlaces">Reserva</a>
+            <a href="reserva.html" class="navegacion__enlaces">Reserva</a>
           </div>
         </div>
       </div>
+
     </div>
-    
+
     <main class="contenedor reserva">
       <h2 class="reserva__titulo">Reserva tu Mesa</h2>
 
       <div class="reserva__formulario-contenedor">
-        <form  class="reserva_formulario" action="">
+        <form  class="reserva_formulario" action="<?_SERVER['PHP_SELF']?>" method="post"><!--Permite enviar desde este archivo-->
           <div class="campo">
             <label for="nombre">Nombre:</label>
-            <input type="text" id="nombre" placeholder="Tu Nombre" autocomplete="name" required>
+            <input type="text" id="nombre" placeholder="Tu Nombre" autocomplete="name" required name="nombre"><!--agregar name a los campos-->
           </div>
 
           <div class="campo">
             <label for="email">Email:</label>
-            <input type="email" id="email" placeholder="Tu Email" autocomplete="email" required>
+            <input type="email" id="email" placeholder="Tu Email" autocomplete="email" required name="email"><!--agregar name a los campos-->
           </div>
 
           <div class="campo">
             <label for="nombre">Numero de Personas</label>
-            <select name="" id="">
+            <select name="cantidad" id=""><!--agregar name a los campos-->
               <option value="" disabled selected>-- Seleccione --</option>
               <option value="1">1</option>
               <option value="2">2</option>
@@ -74,22 +97,25 @@
 
           <div class="campo">
             <label for="hora">Hora:</label>
-            <input type="time" id="hora">
+            <input type="time" id="hora" name="hora"><!--agregar name a los campos-->
           </div>
 
           <div class="campo">
             <label for="fecha">Fecha:</label>
-            <input type="date" id="fecha">
+            <input type="date" id="fecha" name="fecha"><!--agregar name a los campos-->
           </div>
 
           <div class="campo">
-            <input type="submit" value="Enviar">
+            <input type="submit" value="Enviar" name="Enviar">
           </div>
         </form>
+        <?php
+            }
+        ?><!--cerramos else-->
 
         <div class="reserva__imagen-container">
           <div class="reserva__imagen">
-              <img src="build/img/logo-mobile-blanco.png" alt="Logo Pokémon Station">
+            <img src="build/img/logo-mobile-blanco.png" alt="Logo Pokémon Station">
           </div>
         </div>
       </div>
@@ -105,7 +131,7 @@
           <a href="index.html" class="navegacion__enlaces">Inicio</a>
           <a href="conocenos.html" class="navegacion__enlaces">Conocenos</a>
           <!-- <a href="#" class="navegacion__enlaces">Galeria</a> -->
-          <a href="reserva.php" class="navegacion__enlaces">Reserva</a>
+          <a href="reserva.html" class="navegacion__enlaces">Reserva</a>
         </div>
       </div>
 
